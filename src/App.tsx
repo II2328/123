@@ -114,7 +114,7 @@ export default function App() {
               className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-[1.1] mb-6"
             >
               Обучение профессии: <br/>
-              <span className="text-blue-600">Оператор автоматических и полуавтоматических станков</span>
+              <span className="text-blue-600">Оператор автоматических и полуавтоматических станков и линий станков</span>
             </motion.h1>
             
             <motion.p 
@@ -158,7 +158,7 @@ export default function App() {
                 <div className="text-sm text-slate-500 font-medium">академических часа</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-slate-900 mb-1">74 000 ₽</div>
+                <div className="text-3xl font-bold text-slate-900 mb-1">74 000 руб.</div>
                 <div className="text-sm text-slate-500 font-medium">полная стоимость</div>
               </div>
               <div className="col-span-2 md:col-span-1">
@@ -192,7 +192,7 @@ export default function App() {
                   {
                     icon: <Award className="w-6 h-6 text-blue-600" />,
                     title: "Достойная заработная плата",
-                    desc: "Специалисты по автоматическим линиям получают зарплату выше среднего по производственному сектою."
+                    desc: "Специалисты по автоматическим линиям получают зарплату выше среднего по производственному сектору."
                   },
                   {
                     icon: <Settings className="w-6 h-6 text-amber-600" />,
@@ -243,6 +243,19 @@ export default function App() {
             <p className="text-lg text-slate-600">
               Курс рассчитан на 144 академических часа и включает в себя как теоретическую базу, так и интенсивную практику.
             </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6 mb-10">
+            {[
+              { title: "Формат", value: "Очно + практика в цехе" },
+              { title: "Длительность", value: "2 месяца, 3 раза в неделю" },
+              { title: "Ближайший старт", value: "Каждый понедельник" }
+            ].map((item) => (
+              <div key={item.title} className="bg-white rounded-2xl p-6 border border-slate-200">
+                <p className="text-sm text-slate-500 mb-2">{item.title}</p>
+                <p className="text-lg font-bold text-slate-900">{item.value}</p>
+              </div>
+            ))}
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
@@ -302,7 +315,7 @@ export default function App() {
               
               <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/10 mb-8">
                 <div className="text-slate-300 font-medium mb-2">Полный курс (144 часа)</div>
-                <div className="text-5xl font-extrabold text-white mb-6">74 000 ₽</div>
+                <div className="text-5xl font-extrabold text-white mb-6">74 000 руб.</div>
                 
                 <ul className="space-y-4 mb-8">
                   {[

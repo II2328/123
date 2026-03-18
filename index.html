@@ -1,13 +1,314 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Google AI Studio App</title>
+    <meta name="description" content="Учебный центр: программа обучения Оператор автоматических и полуавтоматических станков и линий станков, 144 часа, 74 000 руб." />
+    <title>Учебный центр «ПРОФ-МАСТЕР» — Оператор станков (144 часа)</title>
+    <style>
+      :root {
+        --bg: #f8fafc;
+        --card: #ffffff;
+        --text: #0f172a;
+        --muted: #475569;
+        --primary: #2563eb;
+        --primary-dark: #1d4ed8;
+        --border: #e2e8f0;
+      }
+
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+      }
+
+      .container {
+        width: min(1120px, 92%);
+        margin: 0 auto;
+      }
+
+      .header {
+        position: sticky;
+        top: 0;
+        z-index: 30;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(8px);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 14px 0;
+        gap: 16px;
+      }
+
+      .brand {
+        font-weight: 800;
+        letter-spacing: 0.3px;
+        text-decoration: none;
+        color: var(--text);
+      }
+
+      .brand span { color: var(--primary); }
+
+      .nav-links {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: var(--muted);
+        font-weight: 600;
+      }
+
+      .btn {
+        display: inline-block;
+        background: var(--primary);
+        color: #fff;
+        border: 0;
+        border-radius: 12px;
+        padding: 12px 18px;
+        font-weight: 700;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      .btn:hover { background: var(--primary-dark); }
+
+      .hero {
+        padding: 72px 0 56px;
+      }
+
+      .hero h1 {
+        font-size: clamp(30px, 5vw, 52px);
+        line-height: 1.1;
+        margin: 0 0 18px;
+      }
+
+      .hero p {
+        margin: 0 0 28px;
+        color: var(--muted);
+        max-width: 760px;
+      }
+
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 14px;
+        margin-top: 26px;
+      }
+
+      .stat {
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 16px;
+      }
+
+      .stat strong {
+        display: block;
+        font-size: 28px;
+        line-height: 1.1;
+      }
+
+      section { padding: 26px 0 54px; }
+      h2 { font-size: clamp(24px, 3vw, 36px); margin-bottom: 12px; }
+      .muted { color: var(--muted); }
+
+      .grid-3 {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 14px;
+      }
+
+      .grid-2 {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 16px;
+      }
+
+      .card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 18px;
+      }
+
+      ul { margin: 0; padding-left: 18px; }
+      li + li { margin-top: 8px; }
+
+      .price {
+        background: #0f172a;
+        color: #fff;
+        border-radius: 20px;
+        padding: 24px;
+      }
+
+      .price strong {
+        font-size: clamp(34px, 6vw, 54px);
+        line-height: 1;
+      }
+
+      .form {
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        padding: 24px;
+      }
+
+      .field { margin-bottom: 12px; }
+      .field label {
+        display: block;
+        font-size: 14px;
+        margin-bottom: 6px;
+        font-weight: 600;
+      }
+
+      .field input {
+        width: 100%;
+        border: 1px solid #cbd5e1;
+        border-radius: 10px;
+        padding: 11px 12px;
+        font-size: 15px;
+      }
+
+      .footer {
+        margin-top: 30px;
+        padding: 20px 0 40px;
+        border-top: 1px solid var(--border);
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      @media (max-width: 700px) {
+        .nav { align-items: flex-start; }
+        .nav-links { gap: 12px; }
+      }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <header class="header">
+      <div class="container nav">
+        <a href="#top" class="brand">ПРОФ-<span>МАСТЕР</span></a>
+        <nav class="nav-links">
+          <a href="#program">Программа</a>
+          <a href="#price">Стоимость</a>
+          <a href="#contacts">Контакты</a>
+          <a href="#enroll" class="btn">Записаться</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="container">
+          <h1>Учебная программа: «Оператор автоматических и полуавтоматических станков и линий станков»</h1>
+          <p>
+            Получите востребованную рабочую профессию, практические навыки работы на современном оборудовании и
+            документ установленного образца. Обучение подходит для начинающих и сотрудников производства, желающих повысить квалификацию.
+          </p>
+          <a href="#enroll" class="btn">Оставить заявку</a>
+
+          <div class="stats">
+            <article class="stat">
+              <strong>144</strong>
+              академических часа
+            </article>
+            <article class="stat">
+              <strong>74 000 руб.</strong>
+              полная стоимость курса
+            </article>
+            <article class="stat">
+              <strong>2 месяца</strong>
+              очно + практика в цехе
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="program">
+        <div class="container">
+          <h2>Что входит в обучение</h2>
+          <p class="muted">Содержание курса сформировано так, чтобы выпускник мог уверенно работать на автоматических и полуавтоматических линиях.</p>
+          <div class="grid-3">
+            <article class="card">
+              <h3>Модуль 1 — 24 часа</h3>
+              <ul>
+                <li>Материаловедение</li>
+                <li>Технические измерения</li>
+                <li>Допуски и посадки</li>
+              </ul>
+            </article>
+            <article class="card">
+              <h3>Модуль 2 — 32 часа</h3>
+              <ul>
+                <li>Чтение чертежей</li>
+                <li>Техдокументация</li>
+                <li>Контроль качества</li>
+              </ul>
+            </article>
+            <article class="card">
+              <h3>Модуль 3 — 40 часов</h3>
+              <ul>
+                <li>Устройство станков и линий</li>
+                <li>Режимы обработки</li>
+                <li>Техника безопасности</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="price">
+        <div class="container grid-2">
+          <article class="price">
+            <h2 style="margin-top:0">Стоимость и условия</h2>
+            <p style="opacity:.88">Полный курс: 144 часа</p>
+            <strong>74 000 руб.</strong>
+            <ul style="margin-top:18px">
+              <li>Преподаватели с производственным опытом</li>
+              <li>Практические занятия на оборудовании</li>
+              <li>Итоговая аттестация</li>
+              <li>Свидетельство установленного образца</li>
+            </ul>
+          </article>
+
+          <article class="form" id="enroll">
+            <h2 style="margin-top:0">Записаться на курс</h2>
+            <p class="muted">Оставьте контакты — менеджер свяжется с вами и расскажет о старте ближайшей группы.</p>
+            <form onsubmit="event.preventDefault(); alert('Спасибо! Ваша заявка отправлена.');">
+              <div class="field">
+                <label for="name">ФИО</label>
+                <input id="name" name="name" type="text" placeholder="Иванов Иван Иванович" required />
+              </div>
+              <div class="field">
+                <label for="phone">Телефон</label>
+                <input id="phone" name="phone" type="tel" placeholder="+7 (999) 123-45-67" required />
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="example@mail.ru" />
+              </div>
+              <button class="btn" type="submit" style="width:100%">Отправить заявку</button>
+            </form>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer" id="contacts">
+      <div class="container">
+        <strong style="color:#0f172a">Учебный центр «ПРОФ-МАСТЕР»</strong><br />
+        Телефон: <a href="tel:+78000000000">8 (800) 000-00-00</a> · Email: <a href="mailto:info@prof-master.ru">info@prof-master.ru</a><br />
+        Адрес: г. Москва, ул. Производственная, д. 1
+      </div>
+    </footer>
   </body>
 </html>
-
